@@ -1,8 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-using Basic_derusting;
-
-Console.WriteLine("Hello, World!");
+﻿using Basic_derusting;
 
 string input = "the sky is blue";
 
-Console.Write(stringManipulation.ReverseVowelsInString(input));
+Console.WriteLine("reverse Words: " + stringManipulation.ReverseWordInString(input));
+Console.WriteLine("reverse Vowels: " + stringManipulation.ReverseVowelsInString(input));
+
+Console.WriteLine(stringManipulation.GreatestCommonDenominatorInString("ABABAB", "ABAB"));
