@@ -59,7 +59,7 @@ namespace Basic_derusting
             return snippets.OrderByDescending(s => s.Length).First();
         }
 
-        public static string GreatestCommonDenominatorInString(string sentence0, string sentence1)
+        public static string GreatestCommonSequenceInString(string sentence0, string sentence1)
         {
             string longestCommonSequence = LongestCommonSequence(sentence0, sentence1);
 
