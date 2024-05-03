@@ -37,14 +37,14 @@ namespace Basic_derusting
                 (sentence0, sentence1) = (sentence1, sentence0);
             }
 
-            // should exist a better way than this, close to O(n^2)
-            // TODO: Find way
             string[] snippets = new string[sentence0.Length];
             int j;
             for (int i = 0; i < sentence0.Length; i++)
             {
+                // check if current element has previously been included
+                j = (i > 0 && snippets[i - 1].Length > 1) ? snippets[i - 1].Length - 1 : 1;
 
-                j = 1;
+                // find longest sequence given previously included elements
                 snippets[i] = sentence0.Substring(i, j);
                 while (i + j < sentence0.Length && sentence1.Contains(snippets[i]))
                 {
@@ -52,6 +52,7 @@ namespace Basic_derusting
                     snippets[i] = sentence0.Substring(i, j);
                 }
 
+                // if last element is not part of sequence, remove
                 if (!sentence1.Contains(snippets[i]))
                     snippets[i] = sentence0.Substring(i, j - 1);
             }
